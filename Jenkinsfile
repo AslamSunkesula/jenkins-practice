@@ -8,7 +8,7 @@ pipeline {
                 ls -ltr
                 pwd
 
-                '''sh
+                '''
             }
         }
         stage('Test') {
