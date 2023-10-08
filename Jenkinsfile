@@ -16,6 +16,20 @@ pipeline {
                 echo 'Deploying....'
             }
         }
-    }
+    }     
+    post { 
+        always { 
+            echo 'I will always whether the job is success or not '
+        }
+   
+  
+        success { 
+            echo 'I will always when job is success'
+        }
+        failure { 
+            echo 'I will run only when job is faiure'
     
+        }
+
+     }
 }
