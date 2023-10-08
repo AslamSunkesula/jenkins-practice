@@ -10,7 +10,7 @@ pipeline {
                 sh '''
                 ls -ltr
                 pwd
-
+                echo 'push from git hub'
                 '''
             }
         }
