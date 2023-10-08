@@ -1,5 +1,5 @@
 pipeline {
-gent { node { label 'AGENT-1' } } 
+ agent { node { label 'AGENT-1' } } 
     stages {
         stage('Build') {
             steps {
