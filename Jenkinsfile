@@ -14,7 +14,7 @@ pipeline {
                 sh '''
                 ls -ltr
                 pwd
-                echo 'push from git hub'
+                echo 'push from git hub 2nd time '
                 '''
             }
         }
