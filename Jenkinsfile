@@ -35,10 +35,10 @@ pipeline {
         success { 
             echo 'I will always when job is success'
         }
-        failure { 
-            echo 'I will run only when job is faiure'
+        // failure { 
+        //     echo 'I will run only when job is faiure'
     
-        }
+        // }
 
      }
 }
