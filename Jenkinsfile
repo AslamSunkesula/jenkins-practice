@@ -4,6 +4,11 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                sh '''
+                ls -ltr
+                pwd
+
+                '''sh
             }
         }
         stage('Test') {
@@ -13,7 +18,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                failure 'Deploying....'
+                echo 'Deploying....'
+              //  error 'this is failed '
             }
         }
     }     
