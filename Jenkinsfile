@@ -23,17 +23,17 @@ pipeline {
             }
         }
     
-        stage('Test') {
-            steps {
+            stage('Test') {
+              steps {
                 echo 'Testing..'
             }
       
-        stage('Example') {
-            environment { 
+            stage('Example') {
+               environment { 
                 AUTH = credentials('ssh-auth') 
             }
            
-        }
+    }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
