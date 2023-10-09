@@ -10,37 +10,38 @@ pipeline {
     }
 
     
-    stages {
+   stages {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh '''
+              sh '''
                 ls -ltr
                 pwd
-                echo 'push from git hub 2nd time '
+                echo "Hello from GitHub Push webhook event"
                 printenv
-                '''
+              '''
             }
         }
-    
-            stage('Test') {
-              steps {
+        stage('Test') {
+            steps {
                 echo 'Testing..'
             }
-      
-            stage('Example') {
-               environment { 
-                AUTH = credentials('ssh-auth') 
-            }
-           
-    }
+        }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-              //  error 'this is failed '
+                //error 'this is failed'
             }
         }
-    }     
+
+        stage('Example') {
+            environment { 
+                AUTH = credentials('ssh-auth') 
+            }
+            steps {
+                sh 'printenv'
+            }
+        }
     post { 
         always { 
             echo 'I will always whether the job is success or not '
