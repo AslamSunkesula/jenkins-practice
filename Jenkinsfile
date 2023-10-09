@@ -18,13 +18,11 @@ pipeline {
                 ls -ltr
                 pwd
                 echo 'push from git hub 2nd time '
+                printenv
                 '''
             }
         }
-        steps {
-                sh 'printenv'
-            }
-
+    
         stage('Test') {
             steps {
                 echo 'Testing..'
