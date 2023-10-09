@@ -5,6 +5,9 @@ pipeline {
         // timeout(time: 1, unit: 'HOURS')
 
     } 
+      environment { 
+        user = 'Aslam'
+    }
 
     
     stages {
@@ -18,6 +21,10 @@ pipeline {
                 '''
             }
         }
+        steps {
+                sh 'printenv'
+            }
+
         stage('Test') {
             steps {
                 echo 'Testing..'
