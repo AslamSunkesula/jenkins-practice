@@ -90,8 +90,8 @@ pipeline {
             }
         }
          stage('Parallel Stage') {
-            when {
-                branch 'main'
+            when { 
+                environment name:'user' , value: 'Aslam'
             }
             parallel {
                 stage('Branch A') {
