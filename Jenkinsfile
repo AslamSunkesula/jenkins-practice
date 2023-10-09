@@ -42,6 +42,8 @@ pipeline {
                 sh 'printenv'
             }
         }
+
+        }
         post { 
         always { 
             echo 'I will always whether the job is success or not '
@@ -57,6 +59,6 @@ pipeline {
         // }
 
      }
-}
+
 
 }
