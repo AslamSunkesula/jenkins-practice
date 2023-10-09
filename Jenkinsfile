@@ -1,6 +1,10 @@
 pipeline {
  agent { node { label 'AGENT-1' } }
-  options {
+
+        triggers {
+        cron('* * * * *')
+    }
+    options {
      //   ansiColor('xterm')
          timeout(time: 1, unit: 'HOURS')
      //    retry(2)
@@ -8,6 +12,8 @@ pipeline {
       environment { 
         user = 'Aslam'
     }
+
+    
     parameters {
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
 
@@ -38,12 +44,7 @@ pipeline {
                 echo 'Testing..'
             }
         }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-                //error 'this is failed'
-            }
-        }
+       
 
         stage('Example') {
             environment { 
@@ -64,6 +65,28 @@ pipeline {
                 echo "Choice: ${params.CHOICE}"
 
                 echo "Password: ${params.PASSWORD}"
+            }
+        }
+         stage('Example2') {
+            input {
+                message "Should we continue?"
+                ok "Yes, we should."
+                submitter "bhavya,Aslam"
+                parameters {
+                    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+                }
+            }
+            steps {
+                echo "Hello, ${PERSON}, nice to meet you."
+            }
+        }
+         stage('Deploy') {
+             when {
+                environment name:'user' , value: 'Aslam'
+            }
+            steps {
+                echo 'Deploying....'
+                //error 'this is failed'
             }
         }
 
