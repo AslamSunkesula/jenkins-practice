@@ -3,7 +3,7 @@ pipeline {
   options {
      //   ansiColor('xterm')
          timeout(time: 1, unit: 'HOURS')
-         retry(2)
+     //    retry(2)
     } 
       environment { 
         user = 'Aslam'
@@ -27,6 +27,12 @@ pipeline {
             steps {
                 echo 'Testing..'
             }
+      
+        stage('Example') {
+            environment { 
+                AUTH = credentials('ssh-auth') 
+            }
+           
         }
         stage('Deploy') {
             steps {
