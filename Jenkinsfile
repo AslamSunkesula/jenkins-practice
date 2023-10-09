@@ -1,9 +1,9 @@
 pipeline {
  agent { node { label 'AGENT-1' } }
 
-        triggers {
-        cron('* * * * *')
-    }
+    //     triggers {
+    //     cron('* * * * *')
+    // }
     options {
      //   ansiColor('xterm')
          timeout(time: 1, unit: 'HOURS')
