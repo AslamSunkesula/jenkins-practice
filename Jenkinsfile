@@ -1,9 +1,9 @@
 pipeline {
  agent { node { label 'AGENT-1' } }
   options {
-        ansiColor('xterm')
-        // timeout(time: 1, unit: 'HOURS')
-
+     //   ansiColor('xterm')
+         timeout(time: 1, unit: 'HOURS')
+         retry(3)
     } 
       environment { 
         user = 'Aslam'
