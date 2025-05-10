@@ -8,12 +8,12 @@ pipeline {
     stages {
         stage('Example ENV') {
             environment {
-                SERVICE_CREDS = credentials('service-creds')
+                SERVICE_CREDS = "aslam"
             }
             steps {
                 sh '''
-                echo "service user is $SERVICE_CREDS_USERNAME"
-                echo "service password is $SERVICE_CREDS_PASSWORD"
+                echo "service user is $SERVICE_CREDS"
+                echo "service password is $SERVICE_CREDS"
                 '''
                 echo "example stage"
             }
