@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                echo "got push form the webhook"
+                echo "got push form the webhookksss"
             }
         }
         stage('Test') {
