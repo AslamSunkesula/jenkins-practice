@@ -8,8 +8,8 @@ pipeline {
     stages {
          
         stage ('Example ENV') {
-            environment {
-                SERVICE_CREDS = credintials('service-creds')
+                environment {
+                    SERVICE_CREDS = credentials('service-creds')
 
                 steps {
                     sh '''
