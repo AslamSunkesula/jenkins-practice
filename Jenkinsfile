@@ -15,7 +15,9 @@ pipeline {
                     sh '''
                     echo "service user is $SERVICE_CREDS_USERNAME"
                     echo "service password is $SERVICE_CREDS_PASSWORD"
+
                     '''
+                    echo "example stage"
                 }
                 
         }
