@@ -1,10 +1,25 @@
 pipeline {
     agent any
-    options {
-        // Timeout counter starts AFTER agent is allocated
-        timeout(time: 1, unit: 'SECONDS')
-    }
+    // options {
+    //     // Timeout counter starts AFTER agent is allocated
+    //     timeout(time: 1, unit: 'SECONDS')
+    // }
+    
     stages {
+         
+        stage ('Example ENV') {
+            environment {
+                SERVICE_CREDS = credintials('service-creds')
+
+                steps {
+                    sh '''
+                    echo "service user is $SERVICE_CREDS_USERNAME"
+                    echo "service password is $SERVICE_CREDS_PASSWORD"
+                    '''
+                }
+                
+        }
+
         stage('Build') {
             steps {
                 echo 'Building..'
