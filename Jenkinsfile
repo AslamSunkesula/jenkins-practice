@@ -17,7 +17,7 @@ pipeline {
                     echo "service password is $SERVICE_CREDS_PASSWORD"
 
                     '''
-                    echo "example stage"
+                    echo "example stages"
                 }
                 
         }
