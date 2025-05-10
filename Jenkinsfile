@@ -28,5 +28,5 @@ pipeline {
         always {
             echo 'This will always run'
         }
-    
-}   
+    }
+}
