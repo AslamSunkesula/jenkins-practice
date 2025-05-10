@@ -6,40 +6,39 @@ pipeline {
     // }
     
     stages {
-         
-        stage ('Example ENV') {
-                environment {
-                    SERVICE_CREDS = credentials('service-creds')
-
-                steps {
-                    sh '''
-                    echo "service user is $SERVICE_CREDS_USERNAME"
-                    echo "service password is $SERVICE_CREDS_PASSWORD"
-
-                    '''
-                    echo "example stage"
-                }
-                
+        stage('Example ENV') {
+            environment {
+                SERVICE_CREDS = credentials('service-creds')
+            }
+            steps {
+                sh '''
+                echo "service user is $SERVICE_CREDS_USERNAME"
+                echo "service password is $SERVICE_CREDS_PASSWORD"
+                '''
+                echo "example stage"
             }
         }
 
         stage('Build') {
             steps {
                 echo 'Building..'
-                echo "got push form the webhookksss"
+                echo "got push from the webhook"
             }
         }
+
         stage('Test') {
             steps {
                 echo 'Testing..'
             }
         }
+
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
             }
         }
     }
+
     post {
         success {
             echo 'Pipeline completed successfully!'
