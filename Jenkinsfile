@@ -20,6 +20,7 @@ pipeline {
                     echo "example stage"
                 }
                 
+            }
         }
 
         stage('Build') {
