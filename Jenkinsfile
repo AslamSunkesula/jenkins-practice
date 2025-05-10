@@ -5,11 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh'''
-                 ls -al
-                 pwd 
-                 echo "Hello, World!"
-                '''
+                echo "got push form the webhook"
             }
         }
         stage('Test') {
